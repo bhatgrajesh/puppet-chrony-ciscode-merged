@@ -320,6 +320,7 @@ describe 'chrony' do
             chronyd_options: ['-q', '-t', '10']
           }
         end
+        
         it 'should contain correct file_line resource' do
            is_expected.to contain_file_line('update_chronyd_options').with(
              'ensure'  => 'present',
@@ -329,7 +330,6 @@ describe 'chrony' do
            )
         end
       end
-
 
       describe 'pools' do
         context 'by default' do
